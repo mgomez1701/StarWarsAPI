@@ -127,4 +127,4 @@ C:\Users\micha\OneDrive\Desktop\C# Boot Camp\APIStarWars\WebAPIStarWars\WebAPISt
 C:\Users\micha\OneDrive\Desktop\C# Boot Camp\APIStarWars\WebAPIStarWars\WebAPIStarWars\bin\Debug\netcoreapp3.0\Newtonsoft.Json.Bson.dll
 C:\Users\micha\OneDrive\Desktop\C# Boot Camp\APIStarWars\WebAPIStarWars\WebAPIStarWars\obj\Debug\netcoreapp3.0\WebAPIStarWars.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\micha\OneDrive\Desktop\C# Boot Camp\APIStarWars\WebAPIStarWars\WebAPIStarWars\obj\Debug\netcoreapp3.0\Razor\Views\Person\GetPersonbyId.cshtml.g.cs
-C:\Users\micha\OneDrive\Desktop\C# Boot Camp\APIStarWars\WebAPIStarWars\WebAPIStarWars\obj\Debug\netcoreapp3.0\Razor\Views\Person\GetPlanetbyId.cshtml.g.cs
+C:\Users\micha\OneDrive\Desktop\C# Boot Camp\APIStarWars\WebAPIStarWars\WebAPIStarWars\obj\Debug\netcoreapp3.0\Razor\Views\Planets\GetPlanetsbyId.cshtml.g.cs

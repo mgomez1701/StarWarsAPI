@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace WebAPIStarWars.Models
 {
 
-    public class Rootobject
+    public class PlanetRoot
     {
         public string name { get; set; }
         public string rotation_period { get; set; }

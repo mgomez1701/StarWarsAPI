@@ -8,21 +8,16 @@ using WebAPIStarWars.Models;
 
 namespace WebAPIStarWars.Controllers
 {
-    public class PersonController : Controller
+    public class PlanetsController : Controller
     {
-
-        public async Task<IActionResult> GetPersonbyId(int id)
+        public async Task<IActionResult> GetPlanetsbyId(int id)
         {
             var client = new HttpClient();
             client.BaseAddress = new Uri("https://swapi.co/api/");
-            var response = await client.GetAsync($"people/{id}");
-            var person = await response.Content.ReadAsAsync<PersonRoot>();
+            var response = await client.GetAsync($"planets/{id}");
+            var person = await response.Content.ReadAsAsync<PlanetRoot>();
 
             return View(person);
         }
-
-      
     }
-
-
 }
