@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -18,9 +19,20 @@ namespace WebAPIStarWars.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            DropDownSearch dropDownSearch = new DropDownSearch();
+            var client = new HttpClient();
+            client.BaseAddress = new Uri("https://swapi.co/api/");
+            var response = await client.GetAsync($"people/");
+            var person = await response.Content.ReadAsAsync<PersonListRoot>();
+            dropDownSearch.Person = person;
+
+            response = await client.GetAsync($"planets/");
+            var planet = await response.Content.ReadAsAsync<PlanetListRoot>();
+            dropDownSearch.Planet = planet;
+
+            return View(dropDownSearch);
         }
 
         public IActionResult Privacy()

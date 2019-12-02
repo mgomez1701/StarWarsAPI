@@ -16,7 +16,7 @@ namespace WebAPIStarWars.Controllers
             var client = new HttpClient();
             client.BaseAddress = new Uri("https://swapi.co/api/");
             var response = await client.GetAsync($"people/{id}");
-            var person = await response.Content.ReadAsAsync<PersonRoot>();
+            var person = await response.Content.ReadAsAsync<DropDownSearch>();
 
             return View(person);
         }

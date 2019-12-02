@@ -2,14 +2,36 @@
     ViewData["Title"] = "Home Page";
 }
 
+@model DropDownSearch
     <form action="../Person/GetPersonbyId" method="post">
-        <input type="number" name="id" placeholder="Search by ID" />
+        <select>
+            @foreach (PersonListItem person in Model.Person.results)
+            {
+                <option value="@person.name">@person.name</option>
+            }
+        </select>
 
-        <input type="submit"  value="Search Characters" />
+        <input type="submit" value="Search Characters" />
     </form>
 
+
+
     <form action="../Planets/GetPlanetsbyId" method="post">
+        <select>
+            @foreach (PlanetListItem planet in Model.Planet.results)
+            {
+                <option value="@planet.name">@planet.name</option>
+            }
+        </select>
+        
+        <input type="submit" value="Search Planets" />
+    </form>
+
+
+
+
+    @*<form action="../Planets/GetPlanetsbyId" method="post">
         <input type="number" name="id" placeholder="Search by ID" />
 
         <input type="submit" value="Search Planets" />
-    </form>
+    </form>*@
