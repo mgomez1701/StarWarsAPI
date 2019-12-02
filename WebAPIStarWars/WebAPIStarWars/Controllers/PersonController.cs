@@ -4,21 +4,33 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using WebAPIStarWars.Models;
 
 namespace WebAPIStarWars.Controllers
 {
     public class PersonController : Controller
     {
-        private readonly HttpClient _client;
 
-        public PersonController(IHttpClientFactory client)
+        public async Task<IActionResult> GetPersonbyId(int id)
         {
-            _client = client.CreateClient();
-            _client.BaseAddress = new Uri ("https://swapi.co/api/")
+            var client = new HttpClient();
+            client.BaseAddress = new Uri("https://swapi.co/api/");
+            var response = await client.GetAsync($"people/{id}");
+            var person = await response.Content.ReadAsAsync<PersonRoot>();
+
+            return View(person);
         }
-        public IActionResult Index()
+
+        public async Task<IActionResult> GetPlanetbyId(int id)
         {
-            return View();
+            var client = new HttpClient();
+            client.BaseAddress = new Uri("https://swapi.co/api/");
+            var response = await client.GetAsync($"planets/{id}");
+            var person = await response.Content.ReadAsAsync<PersonRoot>();
+
+            return View(person);
         }
     }
+
+
 }

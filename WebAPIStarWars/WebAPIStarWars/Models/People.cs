@@ -26,4 +26,5 @@ namespace WebAPIStarWars.Models
         public string url { get; set; }
     }
 
+
 }

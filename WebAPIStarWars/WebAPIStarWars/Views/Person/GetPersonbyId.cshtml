@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewData["Title"] = "GetPersonbyId";
+}
+@model List<PersonRoot>
+
+<h1>Display Person</h1>
+
+<table class="table align-items-xl-center">
+    <tr>
+        <td>Name</td>
+        <td>Height</td>
+        <td>Mass</td>
+        <td>Hair Color</td>
+        <td>Skin Color</td>
+        <td>Eye Color</td>
+        <td>Birth Year</td>
+        <td>Gender</td>
+        <td>Home World</td>
+        <td>Films</td>
+    </tr>
+    @foreach (PersonRoot person in Model)
+    {
+<tr>
+    <td>@person.name</td>
+    <td>@person.height</td>
+    <td>@person.mass</td>
+    <td>@person.hair_color</td>
+    <td>@person.skin_color</td>
+    <td>@person.eye_color</td>
+    <td>@person.birth_year</td>
+    <td>@person.gender</td>
+    <td>@person.homeworld</td>
+    <td>@person.films</td>
+</tr>
+    }
+</table>
+
+

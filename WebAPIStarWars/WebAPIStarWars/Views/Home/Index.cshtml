@@ -2,7 +2,14 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <form action="../Person/GetPersonbyId" method="post">
+        <input type="number" name="id" placeholder="Search by ID" />
+
+        <input type="submit"  value="Search Characters" />
+    </form>
+
+    <form action="../Person/GetPlanetsbyId" method="post">
+        <input type="number" name="id" placeholder="Search by ID" />
+
+        <input type="submit" value="Search Planets" />
+    </form>
