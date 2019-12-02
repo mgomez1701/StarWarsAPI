@@ -2,7 +2,7 @@
 @{
     ViewData["Title"] = "GetPersonbyId";
 }
-@model List<PersonRoot>
+@model PersonRoot
 
 <h1>Display Person</h1>
 
@@ -19,21 +19,20 @@
         <td>Home World</td>
         <td>Films</td>
     </tr>
-    @foreach (PersonRoot person in Model)
-    {
+
 <tr>
-    <td>@person.name</td>
-    <td>@person.height</td>
-    <td>@person.mass</td>
-    <td>@person.hair_color</td>
-    <td>@person.skin_color</td>
-    <td>@person.eye_color</td>
-    <td>@person.birth_year</td>
-    <td>@person.gender</td>
-    <td>@person.homeworld</td>
-    <td>@person.films</td>
+    <td>@Model.name</td>
+    <td>@Model.height</td>
+    <td>@Model.mass</td>
+    <td>@Model.hair_color</td>
+    <td>@Model.skin_color</td>
+    <td>@Model.eye_color</td>
+    <td>@Model.birth_year</td>
+    <td>@Model.gender</td>
+    <td>@Model.homeworld</td>
+    <td>@Model.films</td>
 </tr>
-    }
+    
 </table>
 
 
