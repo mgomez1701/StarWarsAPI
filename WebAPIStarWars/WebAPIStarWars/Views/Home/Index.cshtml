@@ -4,10 +4,18 @@
 
 @model DropDownSearch
     <form action="../Person/GetPersonbyId" method="post">
-        <select>
+        <select name="id">
+            @{
+                int i = 1;
+             }
+
             @foreach (PersonListItem person in Model.Person.results)
             {
-                <option value="@person.name">@person.name</option>
+
+                <option value="@i">@person.name</option>
+               
+                   i++;
+               
             }
         </select>
 
@@ -17,10 +25,14 @@
 
 
     <form action="../Planets/GetPlanetsbyId" method="post">
-        <select>
+        <select name="id">
+            @{
+                int j = 1;
+            }
             @foreach (PlanetListItem planet in Model.Planet.results)
             {
-                <option value="@planet.name">@planet.name</option>
+                <option value="@j">@planet.name</option>
+                j++;
             }
         </select>
         
